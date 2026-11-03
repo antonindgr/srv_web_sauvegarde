@@ -1,0 +1,14 @@
+{
+  "titre": "Sauvegarde automatique du serveur",
+  "resume": "Script Bash lancé chaque nuit par cron : archive la configuration et le site, garde les 7 dernières copies, et restauration testée après une panne simulée.",
+  "image": "captures/03-rotation.png",
+  "tags": ["Bash", "cron", "tar", "Sauvegarde", "Restauration"],
+  "description": "Suite du projet Serveur web Debian durci : un serveur sans sauvegarde testée n'est pas fini. Le script sauvegarde SSH, Nginx, Fail2ban, UFW, le certificat et le site, vérifie chaque archive et supprime les plus anciennes. J'ai ensuite supprimé des fichiers exprès pour prouver que la restauration fonctionne.",
+  "etapes": [
+    "Script de sauvegarde avec arrêt sur erreur et journal OK / ECHEC",
+    "Archives lisibles par root uniquement (elles contiennent une clé privée)",
+    "Planification chaque nuit à 2 h 30 avec cron",
+    "Rotation testée : seules les 7 dernières archives sont conservées",
+    "Panne simulée (site en 403, Fail2ban affaibli) puis restauration ciblée"
+  ]
+}
